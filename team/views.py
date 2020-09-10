@@ -1,3 +1,4 @@
+from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
@@ -7,13 +8,14 @@ from .serializers import TeamSerializer, PlayerSerializer
 
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
+from .helpers.conditional_decorator import conditional_decorator
 
 class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
 
     # Use cache for speed up
-    @method_decorator(cache_page(60*2))
+    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(60*2)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -31,6 +33,6 @@ class PlayerViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     # Use cache to speed up
-    @method_decorator(cache_page(60*2))
+    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(60*2)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)

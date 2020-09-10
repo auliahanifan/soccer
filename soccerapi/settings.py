@@ -11,16 +11,23 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+SECRET_KEY = os.environ.get('SECRET_KEY', 'secretKey')
+
+
+USE_CACHE = (os.environ.get('USE_CACHE') == 'true')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*o7e(@zt#&cs9h2$)jp7lrg_=$wy(hhf&9ftb-khh5r2d%1ys='
+# SECRET_KEY = '*o7e(@zt#&cs9h2$)jp7lrg_=$wy(hhf&9ftb-khh5r2d%1ys='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,15 +85,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'soccerapi.wsgi.application'
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://localhost:6379/',
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': 'redis://localhost:6379/',
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
 
 DATABASES = {
     'default': {
