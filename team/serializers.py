@@ -10,8 +10,6 @@ class PlayerForTeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Player
         fields = ('name', 'number', 'id')
-        # read_only_fields = ('name', 'number', 'id')
-        # read_only_fields = ()
 
 class TeamSerializer(serializers.ModelSerializer):
     player = PlayerForTeamSerializer(many=True, read_only=True)
