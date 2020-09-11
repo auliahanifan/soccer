@@ -1,0 +1,13 @@
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.exe
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.deps.json
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.runtimeconfig.json
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.runtimeconfig.dev.json
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.dll
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\bin\Debug\netcoreapp3.1\CalculatorString.pdb
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.csprojAssemblyReference.cache
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.AssemblyInfoInputs.cache
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.AssemblyInfo.cs
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.csproj.CoreCompileInputs.cache
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.dll
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.pdb
+C:\Users\Aulia Hanifan\Work\soccerapi\CalculatorString\obj\Debug\netcoreapp3.1\CalculatorString.genruntimeconfig.cache
