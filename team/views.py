@@ -15,7 +15,7 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
 
     # Use cache for speed up
-    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(60*2)))
+    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(2*1)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -33,6 +33,6 @@ class PlayerViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     # Use cache to speed up
-    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(60*2)))
+    @conditional_decorator(settings.USE_CACHE, method_decorator(cache_page(2*1)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)

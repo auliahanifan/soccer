@@ -95,14 +95,39 @@ WSGI_APPLICATION = 'soccerapi.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
+
+SQLITE_CONFIG = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+PG_DB_NAME = os.environ.get('PG_DB_NAME', 'postgres')
+PG_USERNAME = os.environ.get('PG_USERNAME', 'postgres')
+PG_PASSWORD = os.environ.get('PG_PASSWORD', '')
+PG_HOST = os.environ.get('PG_HOST', 'localhost')
+PG_PORT = os.environ.get('PG_PORT', '5432')
+
+USE_POSTGRES = (os.environ.get('USE_POSTGRES', '') == 'true')
+
+POSTGRES_CONFIG = {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': PG_DB_NAME,
+
+        'USER': PG_USERNAME,
+
+        'PASSWORD': PG_PASSWORD,
+
+        'HOST': PG_HOST,
+
+        'PORT': PG_PORT,
+
+    }
+
+DATABASES = {
+    'default': POSTGRES_CONFIG if USE_POSTGRES else SQLITE_CONFIG
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
