@@ -18,6 +18,11 @@ Here how to run natively:
 2. And you can run this app with `sh run.sh ` if you run in linux/macos environment or `.\run.ps1` if you run in windows with powershell , it install all dependencies. 
 3. Or manually run with `python manage.py runserver` if all dependencies installed and database has been migrated.
 
+### Notes
+
+This app has been installed with Swagger. You can access it on `/` endpoints.
+This app has been tested. You can access the result on `/test-result/index.html` endpoints.
+
 ___
 
 ## Configurations
@@ -62,8 +67,6 @@ class Player(BaseModel):
 ___
 
 ## Endpoints and JSON Scheme
-
-This app has been installed with Swagger. You can access it on `/` endpoints.
 
 Here the endpoints:
 

@@ -47,10 +47,20 @@ INSTALLED_APPS = [
     # 3rd party
     'rest_framework',
     'drf_yasg',
+    'django_extensions', # $ python manage.py show_urls
+    'django_nose',
 
     # Our app
     'team',
 
+]
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-html',
+    '--cover-package=team',
 ]
 
 MIDDLEWARE = [
@@ -163,4 +173,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# TEMPLATE_PATH = os.path.join(BASE_DIR, 'cover')
+# STATIC_PATH = os.path.join(BASE_DIR, 'cover')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'cover')
+# STATIC_URL = os.path.join(BASE_DIR,'/cover/')
+STATIC_URL = '/test-result/'
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR, 'templates'),
+# )
+STATICFILES_DIRS = [
+    BASE_DIR / "cover",
+    # '/var/www/static/',
+]
+
