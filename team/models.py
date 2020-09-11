@@ -14,4 +14,4 @@ class Team(BaseModel):
 class Player(BaseModel):
     name = models.CharField(max_length=255, null=False)
     number = models.SmallIntegerField(null=False)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="player", null=False)
+    team = models.ForeignKey(Team, on_delete=models.SET_NULL, related_name="player", null=True)
