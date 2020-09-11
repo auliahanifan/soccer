@@ -37,7 +37,7 @@ Here how to run natively:
 ### Notes
 
 This app has been installed with Swagger. You can access it on `/` endpoints.
-This app has been tested. You can access the result on `/test-result/index.html` endpoints.
+This app has been tested. You can access the result on `/test-result/index.html` endpoints. *This only on `DEBUG=True`. (still finding why `python manage.py test` have different result when in windows and linux *I use WSL & windows...)
 
 ___
 
