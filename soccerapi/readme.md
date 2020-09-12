@@ -8,7 +8,7 @@ To run this app, you need this:
 
 1. Python 3.7+
 2. PostgreSQL (If you want to use this, default use SQLite)
-
+3. Docker & Docker-Compose (If you want to run it with docker-compose)
 ___
 
 ## Configurations
@@ -33,7 +33,10 @@ Here how to run natively:
 2. Make sure your CONFIGURATION is Ok.
 3. And you can run this app with `sh run.sh ` if you run in linux/macos environment or `.\run.ps1` if you run in windows with powershell , it install all dependencies. 
 4. Or manually run with `python manage.py runserver` if all dependencies installed and database has been migrated.
-5. use docker-compose by run `sh run-docker.sh` . But you have to change `DEBUG=False` first in `/soccerapi/settings.py` if you want to run in docker.
+
+You can run it with docker:
+1. Use docker-compose by run `sh run-docker.sh` . Check that `run-docker.sh` file on the first line u have to make sure `--env-file` same as you want. But you have to change `DEBUG=False` first in `/soccerapi/settings.py` if you want to run in docker.
+
 ### Notes
 
 This app has been installed with Swagger. You can access it on `/` endpoints.
